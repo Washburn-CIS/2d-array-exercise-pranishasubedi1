@@ -49,20 +49,27 @@ public class TicTacToe {
     }
 
     public static char findWinner() {
-        for(int r=0; r<3; r++) {
+        for(int r = 0; r<3; r++) {
             // three-in-a-row horizontally
             if(board[r][0] != '.' && board[r][0] == board[r][1] && board[r][1] == board[r][2]) {
                 return board[r][0];
             }
         }
-
+           
         // TODO: three-in-a-row vertically 
+         for(int c = 0; c<3; c++) {
+            // three-in-a-row horizontally
+            if(board[0][c] != '.' && board[0][c] == board[1][c] && board[1][c] == board[2][c]) {
+                return board[0][c];
 
         // diagonals
         if(board[0][0] != '.' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
             return board[0][0];
         }
         // TODO: check other diagonal
+        if (board[0][2] != '.' && board[0][2] == board [1][1] && board[1][1] == board[2][0]) {
+            return board[0][2];
+        }
             
         return '-';
     }
